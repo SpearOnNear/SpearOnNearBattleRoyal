@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Spear On Near</title>
+    <title>Spear On Near</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -105,7 +105,7 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
-          loadingBar.style.display = "none";
+          loadingBar.style.display = "none";        
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
           };
