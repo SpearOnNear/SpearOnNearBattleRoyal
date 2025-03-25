@@ -1,10 +1,11 @@
-const cacheName = "Spear-Spear On Near-2";
+const cacheName = "Spear-Spear On Near-2.1";
 const contentToCache = [
     "Build/SpearOnNearBattleRoyal.loader.js",
     "Build/SpearOnNearBattleRoyal.framework.js",
     "Build/SpearOnNearBattleRoyal.data",
     "Build/SpearOnNearBattleRoyal.wasm",
     "TemplateData/style.css"
+
 ];
 
 self.addEventListener('install', function (e) {
