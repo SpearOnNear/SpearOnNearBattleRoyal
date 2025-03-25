@@ -1,5 +1,8 @@
-const buildVersion = "2.3"; // Change this for each new build
+const buildVersion = "2.4"; // Change this for each new build
 const cachedVersion = localStorage.getItem("webgl_build_version");
+
+console.log("Cached version:", cachedVersion);
+console.log("Build version:", buildVersion);
 
 // Create a loading screen
 const loaderDiv = document.createElement("div");
