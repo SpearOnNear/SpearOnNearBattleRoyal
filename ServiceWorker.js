@@ -1,4 +1,4 @@
-const cacheName = "Spear-Spear On Near-3.0";
+const cacheName = "Spear-Spear On Near-3.1";
 const contentToCache = [
     "Build/SpearOnNearBattleRoyal.loader.js",
     "Build/SpearOnNearBattleRoyal.framework.js",
