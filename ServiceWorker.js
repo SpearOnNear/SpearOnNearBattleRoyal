@@ -19,15 +19,23 @@ self.addEventListener('install', function (e) {
 });
 
 self.addEventListener('fetch', function (e) {
-    e.respondWith((async function () {
-      let response = await caches.match(e.request);
+  e.respondWith((async function () {
+    if (e.request.url.includes('Build/') || e.request.url.includes('TemplateData/')) {
       console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
+      const response = await caches.match(e.request);
       if (response) { return response; }
-
-      response = await fetch(e.request);
-      const cache = await caches.open(cacheName);
-      console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
-      cache.put(e.request, response.clone());
-      return response;
-    })());
+      else {
+        let _res = await fetch(e.request);
+        const cache = await caches.open(cacheName);
+        console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
+        cache.put(e.request, _res.clone());
+        return _res;
+      }
+    }
+    else {
+      let res = await fetch(e.request);
+      console.log(`[Service Worker] Downloading new resource: ${e.request.url}`);
+      return res;
+    }
+  })());
 });
